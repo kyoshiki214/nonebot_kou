@@ -1,0 +1,19 @@
+{
+  "rsshub": "http://181.214.21.250:1200",
+  "proxy": "",
+  "proxy_urls": [],
+  "last_time": {
+    "http://181.214.21.250:1200/bilibili/user/dynamic/13148307": 1653329235.0,
+    "http://181.214.21.250:1200/bilibili/user/dynamic/2": 1652650163.0
+  },
+  "group_rss": {
+    "825852520": [],
+    "1078699322": [],
+    "236351615": [],
+    "107869932": [
+      "http://181.214.21.250:1200/bilibili/user/dynamic/13148307",
+      "http://181.214.21.250:1200/bilibili/user/dynamic/2"
+    ]
+  },
+  "group_mode": {}
+}
