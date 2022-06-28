@@ -26,4 +26,6 @@ COPY ./ /app/
 
 EXPOSE 8080
 
+RUN pip install jsonpath
+
 CMD ["nb","run"]
