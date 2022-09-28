@@ -10,9 +10,9 @@ current_path = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.p
 V_PATH = "app/src/plugins/atri/resources/voice/"
 scheduler = require("nonebot_plugin_apscheduler").scheduler
 
-tmp = on_command('test')
+# tmp = on_command('test')
 
-@tmp.handle()
+# @tmp.handle()
 async def test():
     bot = get_bot()
     img_url = (await get_url())

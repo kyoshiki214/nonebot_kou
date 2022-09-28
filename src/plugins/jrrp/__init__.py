@@ -4,7 +4,7 @@ import time
 import sqlite3
 import numpy as np
 from nonebot import Bot, on_command, get_driver
-from nonebot.adapters.onebot.v11 import Bot, MessageEvent
+from nonebot.adapters.onebot.v11 import Bot, MessageEvent, PrivateMessageEvent
 from scipy.special import erfinv
 
 db_path = get_driver().config.jrrp_db[0]
@@ -14,6 +14,7 @@ cur = con.cursor()
 
 jrrp = on_command('jrrp', aliases={'.jrrp', '。jrrp'}, priority=2, block=True)
 
+db = on_command('db', priority=2, block=True)
 
 @jrrp.handle()
 async def _(bot: Bot, event: MessageEvent):
@@ -35,6 +36,15 @@ async def _(bot: Bot, event: MessageEvent):
         await jrrp.finish(message=f'{name}今天的人品值是: {rand}')
     else:
         await jrrp.finish(message=f'{name}今天的人品值是: {rand[0]}（刷不了初始，爬)')
+
+@db.handle()
+async def exec(bot:Bot, event:MessageEvent):
+    sql = event.get_plaintext().removeprefix('db ')
+    cur.execute(sql)
+    row = cur.fetchone()
+    print(str(row))
+    await db.send(message=str(row))
+
 
 
 def avg_rand():
