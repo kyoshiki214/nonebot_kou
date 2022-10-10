@@ -8,12 +8,13 @@ pixiv = on_command("pixiv", aliases={"pix"}, priority=2, block=True)
 
 @pixiv.handle()
 async def pix_sender(bot: Bot, event: MessageEvent):
-    uid = str(event.get_message())
-    if not uid[5].isdigit():
-        uid = uid[6:]
-    else:
-        uid = uid[4:]
-    # print(uid)
+    plain_msg = str(event.get_message())
+    uid = plain_msg.split(' ')[1]
+    # if not uid[5].isdigit():
+    #     uid = uid[6:]
+    # else:
+    #     uid = uid[4:]
+    print(uid)
     try:
         await pixiv.send(message='bot加载中')
         msg = get_pixiv(uid)
