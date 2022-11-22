@@ -8,9 +8,6 @@ from nonebot.adapters.onebot.v11 import Bot, MessageEvent, PrivateMessageEvent
 from scipy.special import erfinv
 
 db_path = get_driver().config.jrrp_db[0]
-con = sqlite3.connect(db_path)
-cur = con.cursor()
-
 
 jrrp = on_command('jrrp', aliases={'.jrrp', '。jrrp'}, priority=2, block=True)
 
@@ -18,6 +15,8 @@ db = on_command('db', priority=2, block=True)
 
 @jrrp.handle()
 async def _(bot: Bot, event: MessageEvent):
+    con = sqlite3.connect(db_path)
+    cur = con.cursor()
     init_db(cur)
     uid = int(event.get_user_id())
     gid = event.get_session_id()
@@ -33,16 +32,21 @@ async def _(bot: Bot, event: MessageEvent):
         cur.execute(
             f"insert into jrrp values(null, {uid}, \'{current_day}\', {rand})")
         con.commit()
+        con.close()
         await jrrp.finish(message=f'{name}今天的人品值是: {rand}')
     else:
+        con.close()
         await jrrp.finish(message=f'{name}今天的人品值是: {rand[0]}（刷不了初始，爬)')
 
 @db.handle()
 async def exec(bot:Bot, event:MessageEvent):
-    sql = event.get_plaintext().removeprefix('db ')
+    con = sqlite3.connect(db_path)
+    cur = con.cursor()
+    sql = event.get_plaintext().split(':')[1]
     cur.execute(sql)
     row = cur.fetchone()
     print(str(row))
+    con.close()
     await db.send(message=str(row))
 
 
@@ -55,11 +59,17 @@ def avg_rand():
 
 
 def init_db(cur: sqlite3.Cursor):
+    con = sqlite3.connect(db_path)
+    cur = con.cursor()
     cur.execute(
         'CREATE TABLE IF NOT EXISTS jrrp(id integer PRIMARY KEY, uid integer, date text, jrrp integer)')
+    con.close()
 
 
 def get_jrrp(cur: sqlite3.Cursor, uid: str, date: str):
+    con = sqlite3.connect(db_path)
+    cur = con.cursor()
     cur.execute(f'select jrrp from jrrp where uid=={uid} and date==\'{date}\'')
     row = cur.fetchone()
+    con.close()
     return row
