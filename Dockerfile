@@ -22,6 +22,8 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 RUN rm requirements.txt
 
+RUN nb plugin install nonebot-plugin-chatgpt
+
 COPY ./ /app/
 
 EXPOSE 8080
