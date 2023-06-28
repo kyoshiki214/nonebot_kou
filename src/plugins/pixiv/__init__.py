@@ -32,8 +32,8 @@ async def pix_sender(bot: Bot, event: MessageEvent):
 
 
 def get_pixiv(str):
-    uin = 3316848792
-    name = '理塘丁真'
+    uin = 425831926
+    name = '雪豹'
     api = AppPixivAPI()
     api.auth(refresh_token='MjD2JK6YTYgYri88ZwTUXL6dG_eKVpKNHFu732Ryol8')
     json_result = api.illust_detail(str)

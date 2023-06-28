@@ -18,11 +18,11 @@ RUN echo "${TZ}" > /etc/timezone \
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt --no-dependencies
 
 RUN rm requirements.txt
 
-RUN nb plugin install nonebot-plugin-chatgpt
+RUN nb plugin install nonebot_plugin_chatgpt_on_qq
 
 COPY ./ /app/
 
