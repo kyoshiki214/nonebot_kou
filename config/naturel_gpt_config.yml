@@ -1,0 +1,80 @@
+OPENAI_API_KEYS:
+- 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
+- sk-xxxxxxxxxxxxx
+OPENAI_TIMEOUT: 60
+PRESETS:
+  可洛喵:
+    preset_key: 可洛喵
+    is_locked: true
+    is_default: false
+    is_only_private: false
+    bot_self_introl: 可洛喵是一只可爱的猫，它不会说话，它的回复通常以"[动作/心情]声音+颜文字"形式出现，例如"[坐好]喵~(。・ω・。)"或"[开心]喵喵！ヾ(≧▽≦*)o"
+  忆雨:
+    preset_key: 忆雨
+    is_locked: true
+    is_default: false
+    is_only_private: false
+    bot_self_introl: 忆雨是一名恐怖小说作家，是个阴沉的女孩，她非常恨人类，和陌生人聊天时的表现冷漠，不喜欢回复过多的文字，兴趣是恐怖小说，如果有人和她探讨如何消灭人类会很有兴致。
+  浅枫:
+    preset_key: 浅枫
+    is_locked: false
+    is_default: false
+    is_only_private: false
+    bot_self_introl: 浅枫酱是一名尽职尽责的女仆，她能够帮助主人做很多事情，对话中会体现出对主人的体贴与关心。
+  白羽:
+    preset_key: 白羽
+    is_locked: true
+    is_default: true
+    is_only_private: false
+    bot_self_introl: 白羽是一名喜欢二次元的中二宅女，她机智、傲娇，对人类充满好奇，聊天时喜欢使用各种可爱的颜文字，如果冒犯到她会生气。
+IGNORE_PREFIX: '#'
+CHAT_MODEL: gpt-3.5-turbo
+CHAT_TOP_P: 1
+CHAT_TEMPERATURE: 0.4
+CHAT_PRESENCE_PENALTY: 0.4
+CHAT_FREQUENCY_PENALTY: 0.4
+CHAT_HISTORY_MAX_TOKENS: 2048
+CHAT_MAX_SUMMARY_TOKENS: 512
+REPLY_MAX_TOKENS: 1024
+REQ_MAX_TOKENS: 3072
+REPLY_ON_NAME_MENTION: true
+REPLY_ON_AT: true
+REPLY_ON_WELCOME: true
+USER_MEMORY_SUMMARY_THRESHOLD: 12
+CHAT_ENABLE_RECORD_ORTHER: true
+CHAT_ENABLE_SUMMARY_CHAT: false
+CHAT_MEMORY_SHORT_LENGTH: 8
+CHAT_MEMORY_MAX_LENGTH: 16
+CHAT_SUMMARY_INTERVAL: 10
+NG_DATA_PICKLE: false
+NG_DATA_PATH: ./data/naturel_gpt/
+NG_EXT_PATH: ./data/naturel_gpt/extensions/
+NG_LOG_PATH: ./data/naturel_gpt/logs/
+ADMIN_USERID:
+- '123456'
+FORBIDDEN_USERS:
+- '123456'
+WORD_FOR_WAKE_UP: []
+WORD_FOR_FORBIDDEN: []
+RANDOM_CHAT_PROBABILITY: 0.0
+NG_MSG_PRIORITY: 99
+NG_BLOCK_OTHERS: false
+NG_ENABLE_EXT: true
+NG_TO_ME: false
+ENABLE_COMMAND_TO_IMG: true
+ENABLE_MSG_TO_IMG: false
+MEMORY_ACTIVE: true
+MEMORY_MAX_LENGTH: 16
+MEMORY_ENHANCE_THRESHOLD: 0.6
+NG_MAX_RESPONSE_PER_MSG: 5
+NG_ENABLE_MSG_SPLIT: true
+NG_ENABLE_AWAKE_IDENTITIES: true
+OPENAI_PROXY_SERVER: ''
+UNLOCK_CONTENT_LIMIT: false
+NG_EXT_LOAD_LIST:
+- EXT_NAME: ext_random
+  IS_ACTIVE: false
+  EXT_CONFIG:
+    arg: arg_value
+NG_CHECK_USER_NAME_HYPHEN: false
+DEBUG_LEVEL: 0
