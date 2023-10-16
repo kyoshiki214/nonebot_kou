@@ -6,7 +6,7 @@ from jmcomic.jm_option import *
 
 jm = on_command("jm", aliases={"JM"}, priority=2, block=True)
 search = on_command("search", priority=2, block=True)
-jm_option = create_option('/root/tmp/option.yml')
+jm_option = create_option('/root/nonebot/kou/config/option.yml')
 
 
 @jm.handle()

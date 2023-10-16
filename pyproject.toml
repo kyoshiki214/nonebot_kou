@@ -13,8 +13,9 @@ nonebot2 = "^2.0.0-beta.1"
 nb-cli = "^1.0.5"
 
 [tool.nonebot]
-plugins = ["nonebot_plugin_status", "nonebot_plugin_apscheduler", "nonebot_plugin_htmlrender", "nonebot_plugin_petpet","nonebot_plugin_leetcode2", "nonebot_plugin_chatgpt_turbo", "nonebot_plugin_who_at_me", "nonebot_plugin_date_name"]
+plugins = ["nonebot_plugin_status", "nonebot_plugin_apscheduler", "nonebot_plugin_htmlrender", "nonebot_plugin_petpet","nonebot_plugin_leetcode2", "nonebot_plugin_chatgpt_turbo", "nonebot_plugin_who_at_me", "nonebot_plugin_date_name", "nonebot_plugin_chatrecorder", "nonebot_plugin_datastore", "nonebot_plugin_saa"]
 plugin_dirs = ["src/plugins"]
+adapters = [{name = "开黑啦", module_name = "nonebot.adapters.kaiheila", project_link = "nonebot-adapter-kaiheila", desc = "开黑啦协议适配"}]
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]
